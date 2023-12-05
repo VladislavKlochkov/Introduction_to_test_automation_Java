@@ -11,6 +11,7 @@ import java.util.List;
 public class MyGameTest {
     static List<Door> doors;
 
+    //на самом деле тут можно использоваь @BeforeAll, т.к. doors не меняется в течение всех тестов.
     @BeforeEach
     void createDoors() {
         doors = new ArrayList<>();
