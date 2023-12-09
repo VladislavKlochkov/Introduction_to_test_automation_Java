@@ -33,6 +33,7 @@ public class Chapter extends ContentElement {
         }
         System.out.println(getPages());
 
+        //и зачем тут усложнять до уровня итератора, если можно просто contentsComponents::forEach
         Iterator<ContentElement> iterator = contentsComponents.iterator();
         contentsComponents.stream()
                 .takeWhile(x -> iterator.hasNext())
