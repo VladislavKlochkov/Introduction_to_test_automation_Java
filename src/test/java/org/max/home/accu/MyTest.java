@@ -30,6 +30,7 @@ public class MyTest extends AbstractTest {
         //then
         verify(getRequestedFor(urlPathEqualTo("/forecasts/v1/daily/1day/100")));
         Assertions.assertEquals(503, response.getStatusLine().getStatusCode());
+        //в идеале тут еще проверить body "Погода на один день!"
     }
 
     @Test
@@ -46,6 +47,7 @@ public class MyTest extends AbstractTest {
         //then
         verify(getRequestedFor(urlPathEqualTo("/forecasts/v1/daily/10day/123")));
         Assertions.assertEquals(200, response.getStatusLine().getStatusCode());
+        //в идеале тут еще проверить body "Погода на один день!"
     }
 
     @Test
@@ -65,5 +67,6 @@ public class MyTest extends AbstractTest {
         verify(postRequestedFor(urlEqualTo("/menu/coffee"))
                 .withHeader("CoffeeMenu", equalTo("application/x-www-form-urlencoded")));
         assertEquals(200, response.getStatusLine().getStatusCode());
+        //в идеале тут еще проверить body и header
     }
 }
